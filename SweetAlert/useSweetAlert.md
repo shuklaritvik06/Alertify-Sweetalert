@@ -96,7 +96,50 @@ Class can also be added to the modal to give extra styling
 **Ajax Req Example**
 
 ```
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <button id="btn">Click Me</button>
+    <script type="text/javascript">
+      document.getElementById('btn').addEventListener('click',()=>{
+        swal({
+          text: 'Search for weather',
+          content: {
+              element: "input",  // or slider
+              attributes: {
+              placeholder: "London",
+              type: "text"
+          }
+        },
+          button: {
+            text: 'Search',
+            closeModal:false,
+          }
+        })
+        .then(value => {
+          if(!value) throw null;
+          return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${value}&units=metric&appid=${"API KEY"
+}`);
+        }).then(results=> {
+          return results.json()
+        }).then(json=> {
+            const weather = json.main.temp
+            swal(
+            {
+              title: 'Your City Weather',
+              text: `${weather} Celsius`
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
 
 
 ```
