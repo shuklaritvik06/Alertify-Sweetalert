@@ -5,7 +5,7 @@ There are four icons: "warning", "error", "success" and "info".
 ```swal(
 title: "Title",
 message: "Message",
-icon: "Icon type",
+icon: "Icon type",  // Can also be a URL
 button: "Confirm button text",
 buttons: true,
 dangerMode: true,
@@ -87,9 +87,17 @@ Class can also be added to the modal to give extra styling
   });
 ```
 
-swal overlay -> For styling the area around modal
-swal modal -> to style modal
-swal footer -> to style footer
-swal title -> to style title
-swal text -> to style text
+- swal overlay -> For styling the area around modal
+- swal modal -> to style modal
+- swal footer -> to style footer
+- swal title -> to style title
+- swal text -> to style text
+
+**Ajax Req Example**
+
+```
+
+
+
+```
 
