@@ -144,3 +144,20 @@ Class can also be added to the modal to give extra styling
 
 ```
 
+**JSX in sweetalert modal**
+
+```
+import React from 'react'
+import swal from '@sweetalert/with-react'
+ 
+swal(
+  <div>
+    <h1>My title</h1>
+    <p>
+       My content
+    </p>
+  </div>
+)
+
+```
+
