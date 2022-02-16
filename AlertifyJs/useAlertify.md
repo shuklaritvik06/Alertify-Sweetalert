@@ -116,7 +116,7 @@ alertify.alert()
  alertify.alert().set({transitionOff:true,message: 'Transition Off'}) 
 ```
 
-**EVENTS AVAILABLE**
+**ALL EVENTS**
 
 -  onclose
 -  onclosing
@@ -133,5 +133,49 @@ alertify.alert()
 
 we can use `set({eventName:function(){}})`
 
+**Prompt Dialog**
 
+```
+`title,message,value,onok,oncancel`
 
+alertify.prompt( 'Prompt Title', 'Prompt Message', 'Prompt Value'
+               , function(evt, value) { alertify.success('You entered: ' + value) }
+               , function() { alertify.error('Cancel') })
+```
+
+**Prompt & Confirm Extra Event**
+
+ - oncancel
+
+**Confirm Dialog**
+
+```
+`title,message,value,onok,oncancel`
+
+alertify.confirm('Confirm Title', 'Confirm Message', function(){ alertify.success('Ok') }
+                , function(){ alertify.error('Cancel')});
+```
+
+**Notifiers**
+
+Types:
+
+ `message
+ notify
+ success
+ warning`
+ 
+ Use:
+ 
+ `alertify.notify(message, type, wait, callback)` or just use the alert.typeName()
+ 
+ 
+ Useful Events
+ 
+- delay
+- dismiss
+- dismissOthers
+
+ 
+ 
+ 
